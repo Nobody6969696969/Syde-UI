@@ -1,4 +1,4 @@
-local syde = loadstring(game:HttpGet("https://raw.githubusercontent.com/essencejs/syde/refs/heads/main/source", true))()
+local syde = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nobody6969696969/Syde-UI/refs/heads/main/ui.lua", true))()
 
 syde:Load({
 	Logo = '7488932274',
@@ -545,3 +545,4 @@ syde:Notify({
 	Content = 'All library features have been loaded successfully! Explore each tab to see different elements.',
 	Duration = 5
 })
+
