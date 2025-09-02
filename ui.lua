@@ -1208,7 +1208,7 @@ local TABS = WINDOW.Tab.ScrollingFrame
 local PAGES = WINDOW.Pages
 local settingsOpen = false
 local UIClosed = false
-local Connected = false
+local Connected = true
 local UserInfoDisabled = false
 local UIToggle = Enum.KeyCode.RightShift
 
