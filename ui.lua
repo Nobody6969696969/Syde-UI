@@ -1225,7 +1225,8 @@ function SetUserInfo()
 	local success, thumbnail = pcall(function()
 		return player:GetUserThumbnailAsync(LocalPlayer.UserId, THUMBNAIL_TYPE, THUMBNAIL_SIZE)
 	end)
-
+	WINDOW.UserInfo.ConnectionStatus.Status.BackgroundColor3 = Color3.New(37, 255, 33)
+	WINDOW.UserInfo.ConnectionStatus.Status.TextLabel.Text = "Connected"
 	if success and thumbnail then
 		imageLabel.Image = thumbnail
 		WINDOW.UserInfo.ImageLabel.text.Username.Text = LocalPlayer.Name
