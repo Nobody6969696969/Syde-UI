@@ -47,9 +47,9 @@ local syde = {
 	Connections = {};
 	Comms = Instance.new('BindableEvent');
 	ParentOverride = nil;
-	Build = 'BETA';
+	Build = 'SY2';
 	ConfigEnabled = false;
-	ConfigFolder = 'Madbukv2';
+	ConfigFolder = 'Syde';
 	ConfigFile = 'Config';
 	Flags = {};
 	SettingsFlags = {};
@@ -954,7 +954,7 @@ do
 				-- File validation
 				local success, err = pcall(function()
 					if isfile and not isfile(fullPath) then
-						writefile(fullPath, "-- Madbuk is very sexy ")
+						writefile(fullPath, "-- Protected UI Configuration")
 					else
 						local content = readfile(fullPath)
 					end
@@ -1208,7 +1208,7 @@ local TABS = WINDOW.Tab.ScrollingFrame
 local PAGES = WINDOW.Pages
 local settingsOpen = false
 local UIClosed = false
-local Connected = true
+local Connected = false
 local UserInfoDisabled = false
 local UIToggle = Enum.KeyCode.RightShift
 
@@ -1259,7 +1259,8 @@ function CloseUI()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {ImageTransparency = 1 }):Play()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel.text.Username, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 1 }):Play()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel.text.Display, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 1 }):Play()
-
+	tweenservice:Create(WINDOW.UserInfo.ConnectionStatus.Status, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {BackgroundTransparency = 1 }):Play()
+	tweenservice:Create(WINDOW.UserInfo.ConnectionStatus.Status.TextLabel, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 1 }):Play()
 	task.wait(0.2)
 	if UIClosed == true then
 		syde:Notify({
@@ -1296,7 +1297,8 @@ function OpenUI()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {ImageTransparency = 0 }):Play()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel.text.Username, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 0 }):Play()
 	tweenservice:Create(WINDOW.UserInfo.ImageLabel.text.Display, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 0 }):Play()
-
+	tweenservice:Create(WINDOW.UserInfo.ConnectionStatus.Status, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {BackgroundTransparency = 0 }):Play()
+	tweenservice:Create(WINDOW.UserInfo.ConnectionStatus.Status.TextLabel, TweenInfo.new(0.4, Enum.EasingStyle.Exponential), {TextTransparency = 0 }):Play()
 end
 
 local BOUNCE = false
