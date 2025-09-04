@@ -954,7 +954,7 @@ do
 				-- File validation
 				local success, err = pcall(function()
 					if isfile and not isfile(fullPath) then
-						writefile(fullPath, "-- Protected UI Configuration")
+						writefile(fullPath, "-- Madbuk is very sexy ")
 					else
 						local content = readfile(fullPath)
 					end
